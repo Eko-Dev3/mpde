@@ -25,7 +25,7 @@
         <div class="container">
 
             <div class="header-top">
-                <div class="header-top_contact">
+                <div class="header-top_contact" style="width: 70%;">
                     <span class="header-top_btn">Ultimas noticias</span>
 
                     <div class="header-top_text">
@@ -36,6 +36,43 @@
                     </div>
                 </div>
 
+                    <ul class="header-top_social">
+                        <div class="clock">
+                            <div id="fecha" class="clock-date"></div>
+                            <div id="hora" class="clock-time"></div>
+                          </div>
+                          
+                        <script>
+            function mostrarFechaHora() {
+            var fechaActual = new Date();
+            
+            var dia = fechaActual.getDate();
+            var mes = fechaActual.getMonth() + 1;
+            var anio = fechaActual.getFullYear();
+            var fechaFormateada = dia + "/" + mes + "/" + anio;
+            document.getElementById("fecha").innerHTML = fechaFormateada;
+            
+            var horas = fechaActual.getHours();
+            var minutos = fechaActual.getMinutes();
+            var segundos = fechaActual.getSeconds();
+            var horaFormateada = agregarCeros(horas) + ":" + agregarCeros(minutos) + ":" + agregarCeros(segundos);
+            document.getElementById("hora").innerHTML = horaFormateada;
+            }
+
+            function agregarCeros(numero) {
+            if (numero < 10) {
+                return "0" + numero;
+            } else {
+                return numero;
+            }
+            }
+
+            // Actualizar la fecha y hora cada segundo
+            setInterval(mostrarFechaHora, 1000);
+
+
+                        </script>
+                    </ul>
                     <ul class="header-top_social">
                         <li>
                             <i class='bx bxl-facebook'></i>
@@ -64,6 +101,21 @@
                 </a>
 
                 <style>
+                    .clock {
+                    text-align: center;
+                    }
+
+                    .clock-date {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    }
+
+                    .clock-time {
+                    font-size: 18px;
+                    font-weight: bold;
+                    }
+
+
                     #logo img{
                         width: 100%;
                         height: 170px;
@@ -71,9 +123,42 @@
                     .submenu{
                         display: none;
                     }
+                    .header .dropdown-menu {
+                            padding: 0;
+                            box-shadow: none;
+                            border-radius: 0;
+                            min-width: 240px;
+                            margin-top: 1px !important;
+                            border-color: #edeff2;
+                        }
 
-                    .ministerio :hover a >.submenu{
-                        
+                        .header .dropdown ul li {
+                            border-bottom: 1px solid #f5f5f5;
+                        }
+
+                        .header .dropdown-item {
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            font-size: 14px;
+                            padding: 4px 1.8rem;
+                        }
+
+                        .header .dropdown-item:hover,
+                        .header .dropdown-item:focus {
+                            color: #121212 !important;
+                            background-color: #edeff2;
+                        }
+
+                        .header .dropdown ul li:last-child {
+                            border-bottom: 0;
+                        }
+                    .dropdown-menu{
+                        display: none;
+                    }
+                    a{
+                        text-decoration: none;
+                    }
+                    .has-submenu:hover .dropdown-menu {
                         display: block;
                     }
                     
@@ -89,14 +174,41 @@
                         <li>
                             <a href="#" class="nav_link active">Inicio</a>
                         </li>
-
-                        <li class="ministerio">
-                            <a href="#" class="nav_link">Ministerio</a>
-                           
+                       
+                        <li class="nav-item dropdown has-submenu">
+                            <a class="nav_link" href="#">Ministerio</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                               
+                                <li><a class="dropdown-item" href="organizacion.html">Organización</a></li>
+                                <li><a class="dropdown-item" href="equipo-trabajo.html">Equipo de trabajo</a></li>
+                                <li><a class="dropdown-item" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                                <li><a class="dropdown-item" href="miembros-gobierno.html">Miembros Del Gobierno</a></li>
+                                <li><a class="dropdown-item" href="secretaria-general.html">Secretaría General</a></li>
+                                <li><a class="dropdown-item" href="direcciones-generales.html">Direcciones Generales</a></li>
+                                <li><a class="dropdown-item" href="delegacion-regional.html">Delegación Regional de Bata</a></li>
+                                <li><a class="dropdown-item" href="entidades-afiliadas.html">Entidades Afiliadas</a></li>
+                                <li><a class="dropdown-item" href="lista-negra.html">Lista Negra</a></li>
+                                <li><a class="dropdown-item" href="recursos.html">Recursos</a></li>
+    
+                            </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="nav_link">Servicios</a>
-                           
+                       
+                        <li class="nav-item dropdown has-submenu">
+                            <a class="nav_link" href="#">Servicios</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                               
+                                <li><a class="dropdown-item" href="organizacion.html">Organización</a></li>
+                                <li><a class="dropdown-item" href="equipo-trabajo.html">Equipo de trabajo</a></li>
+                                <li><a class="dropdown-item" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                                <li><a class="dropdown-item" href="miembros-gobierno.html">Miembros Del Gobierno</a></li>
+                                <li><a class="dropdown-item" href="secretaria-general.html">Secretaría General</a></li>
+                                <li><a class="dropdown-item" href="direcciones-generales.html">Direcciones Generales</a></li>
+                                <li><a class="dropdown-item" href="delegacion-regional.html">Delegación Regional de Bata</a></li>
+                                <li><a class="dropdown-item" href="entidades-afiliadas.html">Entidades Afiliadas</a></li>
+                                <li><a class="dropdown-item" href="lista-negra.html">Lista Negra</a></li>
+                                <li><a class="dropdown-item" href="recursos.html">Recursos</a></li>
+    
+                            </ul>
                         </li>
                         <li>
                             <a href="#" class="nav_link">Actualidad y noticias</a>
